@@ -1,0 +1,183 @@
+{
+	"info": {
+		"_postman_id": "d0ce4eb3-21f6-43e7-ad42-5f8688aa6567",
+		"name": "ForNewman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Request1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3c3881d7-d712-419e-a8cb-ce4d89de33b2",
+						"exec": [
+							"pm.globals.set(\"name\", \"ugene\");\r",
+							"let a=pm.globals.get(\"name\");\r",
+							"console.log(a);\r",
+							"pm.test(\"check name\", function () {\r",
+							"pm.expect(a).to.eql('ugene');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/plain",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://www.example.com",
+					"protocol": "http",
+					"host": [
+						"www",
+						"example",
+						"com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2e1de6d9-7d36-4a30-afb8-e1dd5dc62ff5",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://www.example.com",
+					"protocol": "http",
+					"host": [
+						"www",
+						"example",
+						"com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://www.random.org/integers/?num=1&min=1&max=100&col=1&base=10&format=plain&rnd=new",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a62ddea8-09ba-41fb-9b67-9ef7f83f3851",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authority",
+						"value": "www.random.org"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.135 Safari/537.36"
+					},
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-origin"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "referer",
+						"value": "https://www.random.org/widgets/integers/iframe?title=True+Random+Number+Generator&buttontxt=Generate&width=160&height=200&border=on&bgcolor=%23FFFFFF&txtcolor=%23777777&altbgcolor=%23CCCCFF&alttxtcolor=%23000000&defaultmin=1&defaultmax=100&fixed=off"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "cookie",
+						"value": "__cfduid=d9af3216b64892ebcffa31a1ea2fef3191597956748; __utmz=1.1598811632.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); RDOSESSION=0miat9ke44o8a6lbsl917sfhv1; __cflb=02DiuEMAZFhhWAbaKrF1fuSZexDk78uez49DEsFCmRKac; __utma=1.1058683567.1598811632.1598811632.1599006019.2; __utmc=1; __utmt=1; __utmb=1.1.10.1599006019"
+					}
+				],
+				"url": {
+					"raw": "https://www.random.org/integers/?num=1&min=1&max=100&col=1&base=10&format=plain&rnd=new",
+					"protocol": "https",
+					"host": [
+						"www",
+						"random",
+						"org"
+					],
+					"path": [
+						"integers",
+						""
+					],
+					"query": [
+						{
+							"key": "num",
+							"value": "1"
+						},
+						{
+							"key": "min",
+							"value": "1"
+						},
+						{
+							"key": "max",
+							"value": "100"
+						},
+						{
+							"key": "col",
+							"value": "1"
+						},
+						{
+							"key": "base",
+							"value": "10"
+						},
+						{
+							"key": "format",
+							"value": "plain"
+						},
+						{
+							"key": "rnd",
+							"value": "new"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
